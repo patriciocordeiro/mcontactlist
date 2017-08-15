@@ -1,0 +1,46 @@
+<div layout="row" layout-align="center center">
+
+    <div layou="row" flex="50">
+
+        <md-card>
+            <md-card-content>
+                <md-content flex>
+                    <md-list flex>
+
+                        <md-list-item>
+                            <!--            <img ng-src="{{contact.picture}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />-->
+                            <div layout="column">
+                                <h3>{{vm.selectedContact.name}}</h3>
+                            </div>
+                        </md-list-item>
+
+                        <md-list-item class="md-2-line">
+                            <md-icon md-svg-icon="{{phone.options.icon}}" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
+
+                            <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+                                <h3>  Mobile </h3>
+                                <p> {{ vm.selectedContact.phone}} </p>
+                                <md-divider></md-divider>
+                            </div>
+
+                        </md-list-item>
+
+
+                        <md-list-item class="md-2-line">
+                            <md-icon md-svg-icon="{{phone.options.icon}}" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
+
+                            <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+                                <h3> E-mail </h3>
+                                <p> {{ vm.selectedContact.email}} </p>
+                            </div>
+
+                        </md-list-item>
+
+
+                    </md-list>
+
+                </md-content>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div

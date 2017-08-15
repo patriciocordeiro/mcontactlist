@@ -5,12 +5,24 @@ angular.module('mcontactListApp', ['ngMaterial', 'ui.router'])
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-        .state('contactsAll', {
+
+        .state('app', {
+        abstract: true,
+        url: '^',
+        template: '<ui-view/>',
+    })
+
+    .state('app.contactsAll', {
             url: '/contactsAll',
-            templateUrl: 'components/contacts/contactsAll.html',
+            templateUrl: 'components/contacts/listAll/contactsAll.html',
             controller: 'ContactListAllCtrl as vm',
         })
+        .state('app.contactDetails', {
+            url: '/contactsAll/:id',
+            templateUrl: 'components/contacts/details/contactsDetails.html',
+            controller: 'ContactDetailsCtrl as vm',
+        })
 
-    $urlRouterProvider.otherwise('/contactsAll');
+    $urlRouterProvider.otherwise('/');
 
 }]);
