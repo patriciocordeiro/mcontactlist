@@ -1,57 +1,39 @@
 <div layout="row" layout-align="center center">
     <md-content></md-content>
     <div layout="column" flex=50>
-        <!--
-        <md-card>
-            <md-car-title>
-                <h1 class="md-display-1">Meus contatos</h1>
-            </md-car-title>
--->
         <div layout="colum">
             <md-toolbar flex="50" class="pt-fixed-toolbar pt-subheader md-whiteframe-3dp" md-scroll-shrink ng-if="true" md-colors="::{backgroundColor:'dark-'}">
                 <div class="md-toolbar-tools" flex layout="row" layout-align="center center">
-                    <md-input-container flex md-no-float class="md-block">
-                        <input type="text" ng-model="vm.searchText" placeholder="Buscar contacto">
+                    <md-input-container flex md-no-float class="md-block pt-search-box">
+                        <input type="text" ng-model="vm.searchText" placeholder="Buscar contato">
                     </md-input-container>
-                    <md-button class="md-icon-button pt-clear-btn">
+                    <md-button class="md-icon-button pt-clear-btn" ng-click="vm.clearSearchText()">
                         <md-icon md-svg-icon="../../../assets/icons/ic_close_black_24px.svg">></md-icon>
                     </md-button>
                 </div>
 
             </md-toolbar>
         </div>
-        <!--        <md-content>-->
         <md-card class="pt-content" flex="50">
+            <md-card-content>
+                <md-list flex>
+                    <md-list-item ng-repeat="contact in vm.filteredContacts =(vm.contacts | filter: vm.searchText | orderBy: 'name' )" ng-click="null" ui-sref="app.contactDetails({id:contact._id})">
+                        <img ng-src="{{contact.picture}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{ contact.name }}</h3>
+                        </div>
+                    </md-list-item>
+                </md-list>
 
-            <md-list flex>
-                <md-list-item ng-repeat="contact in filteredContacts =(vm.contacts | filter: vm.searchText | orderBy: 'name' )" ng-click="null" ui-sref="app.contactDetails({id:contact._id})">
-                    <img ng-src="{{contact.picture}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
-                    <div class="md-list-item-text" layout="column">
-                        <h3>{{ contact.name }}</h3>
-                    </div>
-                </md-list-item>
-            </md-list>
+                <div layout="column" layou-align="center center" class="pt-no-results">
 
-            <div layout="column" layou-align="center center" class="pt-no-results">
-
-                <span ng-if="filteredContacts.length === 0" class="md-title">Nenhum contato encontrado</span>
-            </div>
-
-            <!--        </md-content>-->
+                    <span ng-if="vm.filteredContacts.length === 0" class="md-title">Nenhum contato encontrado</span>
+                </div>
+            </md-card-content>
         </md-card>
     </div>
 
     <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="vm.openAddContactDialg($event)">
         <md-icon class="md-warn" md-svg-icon="../../../assets/icons/ic_person_add_white_24px.svg"></md-icon>
     </md-button>
-
-    <!--
-   <button class="md-fab md-fab-bottom-right docs-scroll-fab md-button md-ink-ripple scrolling" type="button" ng-transclude="" docs-scroll-class="scrolling" ng-click="scrollTop()" aria-label="Back to Top" aria-hidden="false">
-
-    <md-icon md-svg-src="../../../assets/icons/ic_person_add_white_24px.svg" class="ng-scope" role="img" aria-hidden="true">
-
-    </md-icon>
-    <div class="md-ripple-container" style=""></div>
-</button>
--->
 </div>

@@ -50,4 +50,12 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.38); }
 
+/* line 53, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+.pt-search-box {
+  margin-top: 0;
+  margin-bottom: 0; }
+  /* line 56, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+  .pt-search-box .md-input {
+    padding-right: 24px !important; }
+
 /*# sourceMappingURL=style.css.map */

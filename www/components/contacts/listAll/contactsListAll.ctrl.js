@@ -54,6 +54,12 @@
                 });
         };
 
+        /*Clear search text*/
+        vm.clearSearchText = function () {
+            vm.searchText = "";
+
+        }
+
 
 
     }
