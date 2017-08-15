@@ -10,6 +10,7 @@ gulp.task('default', ['webserver', 'watch']);
 /*Serves the aplication*/
 gulp.task('webserver', function () {
     connect.server({
+        root: 'www',
         livereload: true
     });
 
@@ -34,10 +35,10 @@ gulp.task('sass', function (done) {
 
 //html files
 gulp.task('html', function () {
-    gulp.src('*.html')
+    gulp.src('./www/*.html')
         .pipe(connect.reload());
 })
 gulp.task('watch', function () {
-    gulp.watch(['*.html'], ['html']);
+    gulp.watch(['./www/*.html'], ['html']);
     gulp.watch(['./assests/scss/*.scss'], ['sass']);
 })
