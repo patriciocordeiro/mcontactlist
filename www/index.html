@@ -18,22 +18,16 @@
     <script src="app.js"></script>
 
     <!--Services-->
+    <script src="services/ContactsData.srvc.js"></script>
 
     <!--Controllers-->
+    <script src="components/contacts/contacts.ctrl.js"></script>
 
 </head>
 
 <body ng-app="mcontactListApp">
-    <div layout="row" layout-align="center">
-        <div flex="50" layout-padding>
-            <md-card>
-                <md-car-title>
-                    <h1 class="md-display-1">Hello World </h1>
-                </md-car-title>
-                <md-button class="md-primary md-raised">Click me</md-button>
-            </md-card>
-        </div>
-    </div>
+
+    <ui-view></ui-view>
 </body>
 
 </html>

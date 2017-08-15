@@ -38,7 +38,15 @@ gulp.task('html', function () {
     gulp.src('./www/*.html')
         .pipe(connect.reload());
 })
+
+// js files
+gulp.task('js', function () {
+    gulp.src('./www/*.js')
+        .pipe(connect.reload());
+})
+
 gulp.task('watch', function () {
     gulp.watch(['./www/*.html'], ['html']);
+    gulp.watch(['./www/*.js'], ['js']);
     gulp.watch(['./assests/scss/*.scss'], ['sass']);
 })
