@@ -1,35 +1,54 @@
 <div layout="row" layout-align="center center">
 
-    <div layou="row" flex="50">
+    <div layou="row" flex="25">
 
-        <md-card>
+        <md-card class="pt-no-padding ">
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <div flex layout="row" layout-align="space-between">
+                        <div flex>
+                            <md-button class="md-icon-button" aria-label="Settings">
+                                <md-icon class="md-warn" md-svg-icon="../../../assets/icons/ic_delete_white_24px.svg"></md-icon>
+                                <!--                        <img src="../../../assets/icons/ic_delete_forever_black_24px.svg">-->
+                            </md-button>
+                        </div>
+                        <span flex></span>
+                        <div flex layout="row" layout-align="end center">
+                            <md-button class="md-icon-button" aria-label="Settings">
+                                <md-icon md-svg-icon="../../../assets/icons/ic_edit_white_24px.svg"></md-icon>
+                                <!--                        <img src="../../../assets/icons/ic_delete_forever_black_24px.svg">-->
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-card class="pt-no-margin" md-colors="::{backgroundColor: 'primary'}">
+                <div flex layout="row" layout-align="center center">
+                    <img style="width:150px" src="../../../assets/icons/ic_account_circle_white_36px.svg" alt="profile">
+                </div>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{vm.selectedContact.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+
             <md-card-content>
                 <md-content flex>
                     <md-list flex>
-
-                        <md-list-item>
-                            <!--            <img ng-src="{{contact.picture}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />-->
-                            <div layout="column">
-                                <h3>{{vm.selectedContact.name}}</h3>
-                            </div>
-                        </md-list-item>
-
                         <md-list-item class="md-2-line">
-                            <md-icon md-svg-icon="{{phone.options.icon}}" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
+                            <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
 
-                            <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+                            <div class="md-list-item-text">
                                 <h3>  Mobile </h3>
                                 <p> {{ vm.selectedContact.phone}} </p>
-                                <md-divider></md-divider>
                             </div>
 
                         </md-list-item>
 
 
                         <md-list-item class="md-2-line">
-                            <md-icon md-svg-icon="{{phone.options.icon}}" ng-class="{'md-avatar-icon': phone.options.avatarIcon}"></md-icon>
-
-                            <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+<md-icon md-svg-icon="../../../assets/icons/ic_phone_white_24px.svg"></md-icon>                            <div class="md-list-item-text">
                                 <h3> E-mail </h3>
                                 <p> {{ vm.selectedContact.email}} </p>
                             </div>

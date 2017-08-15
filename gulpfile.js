@@ -18,10 +18,10 @@ gulp.task('webserver', function () {
 
 /*gulp saas for scss*/
 gulp.task('sass', function (done) {
-    gulp.src(['./assests/scss/*.scss'])
+    gulp.src(['./www/assets/scss/*.scss'])
         .pipe(sass())
         .on('error', sass.logError)
-        .pipe(gulp.dest('./assets/css/'))
+        .pipe(gulp.dest('./www/assets/css/'))
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
@@ -29,7 +29,7 @@ gulp.task('sass', function (done) {
             extname: '.min.css'
         }))
         // .pipe(gulp.dest('./www/assets/css/'))
-        .pipe(gulp.dest('./assets/css/'))
+        .pipe(gulp.dest('./www/assets/css/'))
         .on('end', done);
 });
 
@@ -48,5 +48,5 @@ gulp.task('js', function () {
 gulp.task('watch', function () {
     gulp.watch(['./www/**/*.html'], ['html']);
     gulp.watch(['./www/*.js'], ['js']);
-    gulp.watch(['./assests/scss/*.scss'], ['sass']);
+    gulp.watch(['./www/assets/scss/*.scss'], ['sass']);
 })
