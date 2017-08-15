@@ -1,20 +1,20 @@
 {
-    "name": "mcontactlist",
-    "description": "contact list app",
-    "main": "index.html",
-    "authors": [
+  "name": "mcontactlist",
+  "description": "contact list app",
+  "main": "index.html",
+  "authors": [
     "Patricio Cordeiro"
   ],
-    "license": "MIT",
-    "keywords": [
+  "license": "MIT",
+  "keywords": [
     "angularjs",
     "angular",
     "material",
     "design"
   ],
-    "homepage": "https://github.com/patriciocordeiro/mcontactlist",
-    "private": true,
-    "ignore": [
+  "homepage": "https://github.com/patriciocordeiro/mcontactlist",
+  "private": true,
+  "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
@@ -22,9 +22,9 @@
     "test",
     "tests"
   ],
-    "dependencies": {
-        "angular": "^1.6.5",
-        "angular-material": "^1.1.4",
-        "angular-ui-router": "^0.3.2"
-    }
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-material": "^1.1.4",
+    "angular-ui-router": "^0.3.2"
+  }
 }

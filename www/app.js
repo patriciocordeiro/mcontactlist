@@ -23,6 +23,6 @@ angular.module('mcontactListApp', ['ngMaterial', 'ui.router'])
             controller: 'ContactDetailsCtrl as vm',
         })
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/contactsAll');
 
 }]);

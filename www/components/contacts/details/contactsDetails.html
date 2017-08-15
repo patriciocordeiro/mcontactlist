@@ -7,14 +7,14 @@
                 <div class="md-toolbar-tools">
                     <div flex layout="row" layout-align="space-between">
                         <div flex>
-                            <md-button class="md-icon-button" aria-label="Settings">
+                            <md-button class="md-icon-button" aria-label="delete">
                                 <md-icon class="md-warn" md-svg-icon="../../../assets/icons/ic_delete_white_24px.svg"></md-icon>
                                 <!--                        <img src="../../../assets/icons/ic_delete_forever_black_24px.svg">-->
                             </md-button>
                         </div>
                         <span flex></span>
                         <div flex layout="row" layout-align="end center">
-                            <md-button class="md-icon-button" aria-label="Settings">
+                            <md-button class="md-icon-button" aria-label="edit" ng-click="vm.openEditContactDialg()">
                                 <md-icon md-svg-icon="../../../assets/icons/ic_edit_white_24px.svg"></md-icon>
                                 <!--                        <img src="../../../assets/icons/ic_delete_forever_black_24px.svg">-->
                             </md-button>
@@ -34,31 +34,52 @@
             </md-card>
 
             <md-card-content>
-                <md-content flex>
-                    <md-list flex>
-                        <md-list-item class="md-2-line">
-                            <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
+                <!--
+   <div layout="row" layout-align="center center">
+    <div flex="15">
+        <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
+    </div>
+    <md-list flex>
+        <md-list-item class="md-2-line">
+            <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
 
-                            <div class="md-list-item-text">
-                                <h3>  Mobile </h3>
-                                <p> {{ vm.selectedContact.phone}} </p>
-                            </div>
+            <div class="md-list-item-text">
+                <h3>  Mobile </h3>
+                <p> {{ vm.selectedContact.phone}} </p>
+            </div>
 
-                        </md-list-item>
-
-
-                        <md-list-item class="md-2-line">
-<md-icon md-svg-icon="../../../assets/icons/ic_phone_white_24px.svg"></md-icon>                            <div class="md-list-item-text">
-                                <h3> E-mail </h3>
-                                <p> {{ vm.selectedContact.email}} </p>
-                            </div>
-
-                        </md-list-item>
+        </md-list-item>
+        <md-divider></md-divider>
+    </md-list>
 
 
-                    </md-list>
+</div>
+-->
 
-                </md-content>
+                <md-list flex>
+                    <md-list-item class="md-2-line">
+                        <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
+
+                        <div class="md-list-item-text">
+                            <h3>  Mobile </h3>
+                            <p> {{ vm.selectedContact.phone}} </p>
+                        </div>
+
+                    </md-list-item>
+
+
+                    <md-list-item class="md-2-line">
+                        <md-icon md-svg-icon="../../../assets/icons/ic_phone_white_24px.svg"></md-icon>
+                        <div class="md-list-item-text">
+                            <h3> E-mail </h3>
+                            <p> {{ vm.selectedContact.email}} </p>
+                        </div>
+
+                    </md-list-item>
+
+
+                </md-list>
+
             </md-card-content>
         </md-card>
     </div>
