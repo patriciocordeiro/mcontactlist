@@ -1,8 +1,8 @@
-<md-dialog flex-gt-md="25" aria-label="edit contact">
+<md-dialog flex-gt-md="25" aria-label="add contact">
     <form name="editContactForm" ng-cloak>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Editar contato</h2>
+                <h2>Adicionar novo contato</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon md-svg-icon="../../../assets/icons/ic_close_white_24px.svg" aria-label="close dialog" ng-click="cancelDialg()"></md-icon>
@@ -13,13 +13,20 @@
         <md-dialog-content>
             <div class="md-dialog-content">
                 <md-input-container class="md-block">
-                    <input type="text" name="name" md-autofocus ng-model="selectedContact.name" aria-label="contact name" placeholder="Nome" required>
+                    <md-icon md-svg-icon="../../../assets/icons/ic_person_white_24px.svg"></md-icon>
+
+                    <input type="text" name="name" md-autofocus ng-model="newContact.name" aria-label="contact name" placeholder="Nome" required>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <md-icon md-svg-icon="../../../assets/icons/ic_phone_white_24px.svg"></md-icon>
+
+                    <input type="tel" name="phone" ng-model="newContact.phone" aria-label="contact phone" placeholder="Telefone" required>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <input type="tel" name="phone" ng-model="selectedContact.phone" aria-label="contact phone" placeholder="Telefone" required>
-                </md-input-container>
-                <md-input-container class="md-block">
-                    <input type="email" name="email" ng-model="selectedContact.email" aria-label="contact email" placeholder="E-mail" required>
+                    <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
+
+                    <input type="email" name="email" ng-model="newContact.email" aria-label="contact email" placeholder="E-mail" required>
                 </md-input-container>
 
             </div>
@@ -30,7 +37,7 @@
             <md-button ng-click="cancelDialg()">
                 Cancelar
             </md-button>
-            <md-button class="md-primary md-raised" ng-click="confirmDialg(selectedContact)" ng-disabled="!editContactForm.$valid">
+            <md-button class="md-primary md-raised" ng-click="confirmDialg(newContact)" ng-disabled="!editContactForm.$valid">
                 Salvar
             </md-button>
         </md-dialog-actions>

@@ -2,4 +2,11 @@
   padding: 0 !important; }
 
 .pt-no-margin {
-  margin: 0; }
+  margin: 0 !important; }
+
+.md-button.md-fab.md-fab-bottom-right {
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  position: fixed; }
