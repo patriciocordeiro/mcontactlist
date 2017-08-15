@@ -27,9 +27,13 @@
 </head>
 
 <body ng-app="mcontactListApp">
-    <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="vm.openAddContactDialg($event)">
-        <md-icon class="md-warn" md-svg-icon="../../../assets/icons/ic_person_add_white_24px.svg"></md-icon>
-    </md-button>
+    <md-toolbar class="pt-header-toolbar  pt-fixed-toolbar">
+        <div class="md-toolbar-tools">
+            <div layout="row" flex="50" layout-align="center">
+                <span class="md-display">Contact manager</span>
+            </div>
+        </div>
+    </md-toolbar>
     <ui-view></ui-view>
 </body>
 
