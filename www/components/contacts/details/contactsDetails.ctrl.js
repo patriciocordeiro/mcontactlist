@@ -2,14 +2,13 @@
     'use strict';
 
 
-    angular.module('mcontactListApp').controller('ContactDetailsCtrl', ['ContactDataSrcv', '$stateParams', '$filter', '$mdDialog', ContactDetailsCtrl]);
+    angular.module('mcontactListApp').controller('ContactDetailsCtrl', ['ContactDataSrcv', '$stateParams', '$filter', '$mdDialog', '$state', ContactDetailsCtrl]);
 
 
-    function ContactDetailsCtrl(ContactDataSrcv, $stateParams, $filter, $mdDialog) {
+    function ContactDetailsCtrl(ContactDataSrcv, $stateParams, $filter, $mdDialog, $state) {
 
         /*bind this controller to a vm*/
         var vm = this;
-        vm.editContactForm = {};
         //get contacts from service
         vm.contacts = ContactDataSrcv.contacts;
 
@@ -33,16 +32,10 @@
         vm.openEditContactDialg = function (ev) {
 
             vm.contactToEdit = angular.copy(vm.selectedContact);
-
-
             $mdDialog.show({
                     controller: ('DialogCtrl', function (contact, $scope) {
 
                         $scope.selectedContact = contact;
-                        $scope.closeDialg = function () {
-                            $mdDialog.hide();
-                        };
-
                         $scope.cancelDialg = function () {
                             $mdDialog.cancel();
                         };
@@ -82,6 +75,33 @@
                 });
         };
 
+        /************* Remove contact *************/
+        vm.confirmRemoveContact = function (ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title('Remover contato')
+                .textContent('Tem certeza de que deseja remover este contato?')
+                .ariaLabel('remove contact confirm')
+                .targetEvent(ev)
+                .ok('Sim')
+                .cancel('Cancelar')
+            $mdDialog.show(confirm).then(function () {
+                /*operation confirmed*/
+                var idx = 0;
+                /*loop trougth the all contacts */
+                angular.forEach(vm.contacts, function (val) {
+                    if (val._id === vm.selectedContact._id) {
+                        //                      replace the contact with new values
+                        vm.contacts.splice(idx, 1);
+                    }
+                    idx++;
+                })
+                $state.go('app.contactsAll');
+
+            }, function () {
+                /*operation cancelled*/
+            });
+        };
 
     }
 
