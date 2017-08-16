@@ -10,10 +10,14 @@
         /*bind this controller to a vm*/
         var vm = this;
 
+        /*Material design colors*/
+        var colorsNames = ["red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange", "deep-orange"];
+
+        /*Some material design colorsNumbers*/
+        var colorsNumbers = ["400", "500", "600", "700", "800", "900"];
+
         //get contacts from service
         vm.contacts = ContactDataSrcv.contacts
-        console.log(ContactDataSrcv.contacts);
-
 
         /************ Dialog for add new contact *************/
 
@@ -45,7 +49,13 @@
                 .then(function (newContact) {
                     /*Dialog confirmed*/
                     console.log(newContact);
-                    //update contact on service
+
+                    // add a avatar color to the contact
+                    var colorsNamesIndex = Math.round(Math.random() * (colorsNames.length - 1));
+                    var colorsNumbersIndex = Math.round(Math.random() * (colorsNumbers.length - 1));
+                    newContact.avatarColor = colorsNames[colorsNamesIndex] + "-" + colorsNumbers[colorsNumbersIndex];
+
+                    //Add new  contact on service
                     vm.contacts.push(newContact);
 
                 }, function () {

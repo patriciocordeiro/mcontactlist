@@ -220,8 +220,8 @@ var contacts = [{
 
 for (var i = 0; i < contacts.length; i++) {
 
-    colorsNamesIndex = Math.round(Math.random() * (colorsNames.length - 1));
-    colorsNumbersIndex = Math.round(Math.random() * (colorsNumbers.length - 1));
+    var colorsNamesIndex = Math.round(Math.random() * (colorsNames.length - 1));
+    var colorsNumbersIndex = Math.round(Math.random() * (colorsNumbers.length - 1));
 
     contacts[i].avatarColor = colorsNames[colorsNamesIndex] + "-" + colorsNumbers[colorsNumbersIndex];
     console.log(contacts[i].avatarColor);
