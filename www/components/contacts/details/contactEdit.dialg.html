@@ -1,11 +1,11 @@
 <md-dialog flex-gt-md="25" aria-label="edit contact">
-    <form name="editContactForm" ng-cloak>
+    <form name="editContactForm">
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>Editar contato</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon md-svg-icon="../../../assets/icons/ic_close_white_24px.svg" aria-label="close dialog" ng-click="cancelDialg()"></md-icon>
+                <md-button class="md-icon-button" ng-click="cancelDialg()">
+                    <md-icon class="material-icons" aria-label="close dialog">close</md-icon>
                 </md-button>
             </div>
         </md-toolbar>
@@ -13,12 +13,15 @@
         <md-dialog-content>
             <div class="md-dialog-content">
                 <md-input-container class="md-block">
+                    <md-icon class="material-icons" aria-label="name">person</md-icon>
                     <input type="text" name="name" md-autofocus ng-model="selectedContact.name" aria-label="contact name" placeholder="Nome" required>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <input type="tel" name="phone" ng-model="selectedContact.phone" aria-label="contact phone" placeholder="Telefone" ui-br-phone-number required>
+                    <md-icon class="material-icons input-icon" aria-label="phone">phone</md-icon>
+                    <input type="text" name="phone" ng-model="selectedContact.phone" aria-label="contact phone" placeholder="Telefone" ui-br-phone-number required>
                 </md-input-container>
                 <md-input-container class="md-block">
+                    <md-icon class="material-icons" aria-label="email">email</md-icon>
                     <input type="email" name="email" ng-model="selectedContact.email" aria-label="contact email" placeholder="E-mail" required>
                 </md-input-container>
 

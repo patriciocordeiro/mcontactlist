@@ -4,8 +4,8 @@
             <div class="md-toolbar-tools">
                 <h2>Adicionar novo contato</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon md-svg-icon="../../../assets/icons/ic_close_white_24px.svg" aria-label="close dialog" ng-click="cancelDialg()"></md-icon>
+                <md-button class="md-icon-button" ng-click="cancelDialg()">
+                    <md-icon class="material-icons" aria-label="close dialog">close</md-icon>
                 </md-button>
             </div>
         </md-toolbar>
@@ -13,26 +13,20 @@
         <md-dialog-content>
             <div class="md-dialog-content">
                 <md-input-container class="md-block">
-                    <md-icon md-svg-icon="../../../assets/icons/ic_person_white_24px.svg"></md-icon>
-
+                    <md-icon class="material-icons" aria-label="close dialog">person</md-icon>
                     <input type="text" name="name" md-autofocus ng-model="newContact.name" aria-label="contact name" placeholder="Nome" required>
                 </md-input-container>
 
                 <md-input-container class="md-block">
-                    <md-icon md-svg-icon="../../../assets/icons/ic_phone_white_24px.svg"></md-icon>
-
+                    <md-icon class="material-icons" aria-label="close dialog">phone</md-icon>
                     <input type="tel" name="phone" ng-model="newContact.phone" aria-label="contact phone" placeholder="Telefone" ui-br-phone-number required>
                 </md-input-container>
                 <md-input-container class="md-block">
-                    <md-icon md-svg-icon="../../../assets/icons/ic_email_primary_24px.svg"></md-icon>
-
+                    <md-icon class="material-icons" aria-label="close dialog">email</md-icon>
                     <input type="email" name="email" ng-model="newContact.email" aria-label="contact email" placeholder="E-mail" required>
                 </md-input-container>
-
             </div>
-
         </md-dialog-content>
-
         <md-dialog-actions layout="row">
             <md-button ng-click="cancelDialg()">
                 Cancelar

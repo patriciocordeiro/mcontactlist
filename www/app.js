@@ -3,9 +3,22 @@ angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.utils.masks'])
 
 .run(["$rootScope", function ($rootScope) {
 
+    /*Sets the page header title dynamically*/
     $rootScope.pageTitle = 'Lista de contatos';
+    /*show / hide back button on page header*/
+    $rootScope.showBackButton = true;
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+
+        if (toState.name === 'app.contactDetails') {
+            $rootScope.showBackButton = true;
+        } else {
+            $rootScope.showBackButton = false;
+        }
+    })
 
 }])
+
 
 
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {

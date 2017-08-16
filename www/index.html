@@ -12,6 +12,7 @@
 
     <!--css-->
     <link rel="stylesheet" href="./lib/angular-material/angular-material.css">
+    <link rel="stylesheet" href="assets/icons/angular-material-icon/material-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!--External js libs-->
@@ -37,8 +38,14 @@
 <body ng-app="mcontactListApp">
     <md-toolbar class="pt-header-toolbar  pt-fixed-toolbar" md-colors="{backgroundColor:pageHeaderColor}">
         <div class="md-toolbar-tools" layout-align="center center">
-            <div layout="row" flex flex-gt-sm="50" layout-align="center">
-                <span class="md-display" ng-cloak>{{pageTitle}}</span>
+
+            <div layout="row" flex flex-gt-md="50" layout-align="space-bettween center ">
+                <md-button class="md-icon-button" ng-if="showBackButton" ui-sref="app.contactsAll">
+                    <md-icon class="material-icons">arrow_back</md-icon>
+                </md-button>
+                <div flex="80" layout="row" layout-align="center center">
+                    <span class="md-display" ng-cloak>{{pageTitle}}</span>
+                </div>
             </div>
         </div>
     </md-toolbar>
