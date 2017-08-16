@@ -57,6 +57,7 @@
                     templateUrl: 'components/contacts/details/contactEdit.dialg.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
+                    fullscreen: true,
                     clickOutsideToClose: false,
                     locals: {
                         contact: vm.contactToEdit
