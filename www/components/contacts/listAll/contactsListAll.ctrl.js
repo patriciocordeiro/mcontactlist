@@ -2,13 +2,19 @@
     'use strict';
 
 
-    angular.module('mcontactListApp').controller('ContactListAllCtrl', ['ContactDataSrcv', '$mdDialog', ContactListAllCtrl]);
+    angular.module('mcontactListApp').controller('ContactListAllCtrl', ['ContactDataSrcv', '$mdDialog', '$rootScope', ContactListAllCtrl]);
 
 
-    function ContactListAllCtrl(ContactDataSrcv, $mdDialog) {
+    function ContactListAllCtrl(ContactDataSrcv, $mdDialog, $rootScope) {
+
 
         /*bind this controller to a vm*/
         var vm = this;
+
+        /*set the page title*/
+        $rootScope.pageTitle = 'Lista de contatos';
+        /*Set page header color according to contact avatar color*/
+        $rootScope.pageHeaderColor = "primary";
 
         /*Material design colors*/
         var colorsNames = ["red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange", "deep-orange"];

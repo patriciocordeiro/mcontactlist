@@ -13,7 +13,7 @@
 
 .pt-clear-btn {
   margin-left: -35px !important;
-  margin-bottom: 25px !important; }
+  margin-bottom: 8px !important; }
 
 .pt-fixed-toolbar {
   position: fixed; }
@@ -22,13 +22,12 @@
   height: 64px; }
 
 .pt-subheader {
-  left: auto;
-  right: auto; }
+  height: 56px !important;
+  max-height: 56px !important;
+  min-height: 56px !important; }
 
 .pt-fixed-toolbar.pt-subheader {
-  top: 64px;
-  background: white !important;
-  padding-top: 16px; }
+  top: 64px; }
 
 .pt-content {
   margin-top: 128px; }
@@ -41,7 +40,21 @@
   color: rgba(0, 0, 0, 0.38); }
 
 .pt-search-box {
-  margin-top: 0;
+  margin-top: 16px;
   margin-bottom: 0; }
   .pt-search-box .md-input {
     padding-right: 24px !important; }
+
+.pt-user-profile-avatar {
+  position: fixed;
+  top: 120px;
+  max-height: 192px;
+  height: 192px;
+  width: 100%;
+  z-index: 10; }
+
+.pt-contact-profile-content {
+  margin-top: 328px; }
+
+.pt-search-toolbar {
+  background-color: white !important; }

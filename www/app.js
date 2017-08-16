@@ -1,6 +1,12 @@
 'use strict';
 angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.utils.masks'])
 
+.run(["$rootScope", function ($rootScope) {
+
+    $rootScope.pageTitle = 'Lista de contatos';
+
+}])
+
 
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 

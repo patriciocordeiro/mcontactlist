@@ -16,7 +16,7 @@
 
 .pt-clear-btn {
     margin-left: -35px !important;
-    margin-bottom: 25px!important;
+    margin-bottom: 8px!important;
 }
 
 .pt-fixed-toolbar {
@@ -28,14 +28,15 @@
 }
 
 .pt-subheader {
-    left: auto;
-    right: auto;
+    height: 56px !important;
+    max-height: 56px !important;
+    min-height: 56px !important;
 }
 
 .pt-fixed-toolbar.pt-subheader {
     top: 64px;
-    background: white !important;
-    padding-top: 16px;
+    //    background: white !important;
+    //    padding-top: 16px;
 }
 
 .pt-content {
@@ -51,9 +52,28 @@
 }
 
 .pt-search-box {
-    margin-top: 0;
+    margin-top: 16px;
     margin-bottom: 0;
     .md-input {
         padding-right: 24px !important;
     }
+}
+
+$profileHeight:192px;
+.pt-user-profile-avatar {
+    position: fixed;
+    top: 120px;
+    max-height: $profileHeight;
+    height: $profileHeight;
+    width: 100%;
+      z-index: 10;
+}
+
+.pt-contact-profile-content {
+    margin-top: $profileHeight +56 +64 + 16;
+  
+}
+
+.pt-search-toolbar {
+    background-color: white !important;
 }

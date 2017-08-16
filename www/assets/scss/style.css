@@ -17,7 +17,7 @@
 /* line 17, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-clear-btn {
   margin-left: -35px !important;
-  margin-bottom: 25px !important; }
+  margin-bottom: 8px !important; }
 
 /* line 22, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-fixed-toolbar {
@@ -29,20 +29,19 @@
 
 /* line 30, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-subheader {
-  left: auto;
-  right: auto; }
+  height: 56px !important;
+  max-height: 56px !important;
+  min-height: 56px !important; }
 
-/* line 35, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+/* line 36, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-fixed-toolbar.pt-subheader {
-  top: 64px;
-  background: white !important;
-  padding-top: 16px; }
+  top: 64px; }
 
-/* line 41, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+/* line 42, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-content {
   margin-top: 128px; }
 
-/* line 45, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+/* line 46, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-no-results {
   margin-top: 32px;
   padding: 16px;
@@ -50,12 +49,29 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.38); }
 
-/* line 53, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+/* line 54, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
 .pt-search-box {
-  margin-top: 0;
+  margin-top: 16px;
   margin-bottom: 0; }
-  /* line 56, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+  /* line 57, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
   .pt-search-box .md-input {
     padding-right: 24px !important; }
+
+/* line 63, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+.pt-user-profile-avatar {
+  position: fixed;
+  top: 120px;
+  max-height: 192px;
+  height: 192px;
+  width: 100%;
+  z-index: 10; }
+
+/* line 72, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+.pt-contact-profile-content {
+  margin-top: 328px; }
+
+/* line 77, C:/HomeSolutions/projetos/mcontactlist/www/assets/scss/style.scss */
+.pt-search-toolbar {
+  background-color: white !important; }
 
 /*# sourceMappingURL=style.css.map */

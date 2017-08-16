@@ -2,15 +2,21 @@
     'use strict';
 
 
-    angular.module('mcontactListApp').controller('ContactDetailsCtrl', ['ContactDataSrcv', '$stateParams', '$filter', '$mdDialog', '$state', ContactDetailsCtrl]);
+    angular.module('mcontactListApp').controller('ContactDetailsCtrl', ['ContactDataSrcv', '$stateParams', '$filter', '$mdDialog', '$state', '$rootScope', ContactDetailsCtrl]);
 
 
-    function ContactDetailsCtrl(ContactDataSrcv, $stateParams, $filter, $mdDialog, $state) {
+    function ContactDetailsCtrl(ContactDataSrcv, $stateParams, $filter, $mdDialog, $state, $rootScope) {
 
         /*bind this controller to a vm*/
         var vm = this;
+
+        /*set the page title*/
+        $rootScope.pageTitle = 'Detalhes do contato';
+
         //get contacts from service
         vm.contacts = ContactDataSrcv.contacts;
+
+
 
         /*Get the selected contact using its id */
         var contactId = $stateParams.id;
@@ -24,6 +30,9 @@
             vm.selectedContact = $filter('filter')(vm.contacts, {
                 _id: contactId
             })[0];
+
+            /*Set page header color according to contact avatar color*/
+            $rootScope.pageHeaderColor = vm.selectedContact.avatarColor;
         }
 
 
