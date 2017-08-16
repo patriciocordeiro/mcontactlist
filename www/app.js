@@ -1,5 +1,5 @@
 'use strict';
-angular.module('mcontactListApp', ['ngMaterial', 'ui.router'])
+angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.utils.masks'])
 
 
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
