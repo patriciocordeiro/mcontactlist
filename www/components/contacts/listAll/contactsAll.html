@@ -18,9 +18,13 @@
             <md-card-content>
                 <md-list flex>
                     <md-list-item ng-repeat="contact in vm.filteredContacts =(vm.contacts | filter: vm.searchText | orderBy: 'name' )" ng-click="null" ui-sref="app.contactDetails({id:contact._id})">
-                        <img ng-src="{{contact.picture}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+                        <div class="md-avatar" md-colors="{'backgroundColor': contact.avatarColor}">
+                            <div layout="column" layout-align="center center">
+                                <span class="md-title">{{contact.name[0]}}</span>
+                            </div>
+                        </div>
                         <div class="md-list-item-text" layout="column">
-                            <h3>{{ contact.name }}</h3>
+                            <p>{{ contact.name }}</p>
                         </div>
                     </md-list-item>
                 </md-list>
