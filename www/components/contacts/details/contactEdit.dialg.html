@@ -4,7 +4,7 @@
             <div class="md-toolbar-tools">
                 <h2>Editar contato</h2>
                 <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancelDialg()">
+                <md-button class="md-icon-button" ng-click="cancelDialg($event)">
                     <md-icon class="material-icons" aria-label="close dialog">close</md-icon>
                 </md-button>
             </div>
@@ -18,7 +18,7 @@
                 </md-input-container>
                 <md-input-container class="md-block">
                     <md-icon class="material-icons input-icon" aria-label="phone">phone</md-icon>
-                    <input type="text" name="phone" ng-model="selectedContact.phone" aria-label="contact phone" placeholder="Telefone" ui-br-phone-number required>
+                    <input type="text" name="phone" ng-model="selectedContact.phone" aria-label="contact phone" ui-mask="(999)-999-999">
                 </md-input-container>
                 <md-input-container class="md-block">
                     <md-icon class="material-icons" aria-label="email">email</md-icon>
@@ -35,8 +35,7 @@
                     Salvar
                 </md-button>
                 <div hide show-gt-sm flex flex-gt-xs="60" layout="column" ng-click="cancelDialg()">
-                    <md-button ng-click="cancelDialg()">
-
+                    <md-button ng-click="cancelDialg($event)">
                         Cancelar
                     </md-button>
 

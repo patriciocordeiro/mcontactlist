@@ -43,7 +43,7 @@
             vm.contactToEdit = angular.copy(vm.selectedContact);
             $mdDialog.show({
                     controller: ('DialogCtrl', function (contact, $scope) {
-
+                        $scope.editContactForm = {};
                         $scope.selectedContact = contact;
                         $scope.cancelDialg = function () {
                             $mdDialog.cancel();

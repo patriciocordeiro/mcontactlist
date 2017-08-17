@@ -1,5 +1,5 @@
 'use strict';
-angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.utils.masks'])
+angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.mask'])
 
 .run(["$rootScope", function ($rootScope) {
 
@@ -7,6 +7,9 @@ angular.module('mcontactListApp', ['ngMaterial', 'ui.router', 'ui.utils.masks'])
     $rootScope.pageTitle = 'Lista de contatos';
     /*show / hide back button on page header*/
     $rootScope.showBackButton = true;
+
+    /*page header color*/
+    $rootScope.pageHeaderColor = "primary";
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 

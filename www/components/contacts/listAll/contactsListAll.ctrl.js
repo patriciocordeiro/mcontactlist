@@ -62,6 +62,8 @@
                     var colorsNumbersIndex = Math.round(Math.random() * (colorsNumbers.length - 1));
                     newContact.avatarColor = colorsNames[colorsNamesIndex] + "-" + colorsNumbers[colorsNumbersIndex];
 
+                    //Add an id
+                    newContact._id = Date.now();
                     //Add new  contact on service
                     vm.contacts.push(newContact);
 
