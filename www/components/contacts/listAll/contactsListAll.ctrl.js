@@ -63,7 +63,7 @@
                     newContact.avatarColor = colorsNames[colorsNamesIndex] + "-" + colorsNumbers[colorsNumbersIndex];
 
                     //Add an id
-                    newContact._id = Date.now();
+                    newContact._id = Date.now().toString();
                     //Add new  contact on service
                     vm.contacts.push(newContact);
 
